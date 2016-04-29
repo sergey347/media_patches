@@ -1,0 +1,13 @@
+diff --git a/media.media.inc b/media.media.inc
+index 4a20dee..edf0d8d 100644
+--- a/media.media.inc
++++ b/media.media.inc
+@@ -106,7 +106,7 @@ function media_query_media_browser_alter($query) {
+     }
+     if (!empty($extensions)) {
+       foreach ($extensions as $extension) {
+-        $or_condition->condition($alias . '.uri', db_like('.' . $extension), 'LIKE');
++        $or_condition->condition($alias . '.uri', '%' . db_like('.' . $extension), 'LIKE');
+       }
+     }
+   }
